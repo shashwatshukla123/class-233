@@ -1,0 +1,22 @@
+(select first_name, phone from customers)
+UNION
+(select contact_name,phone from suppliers);
+
+
+(select city,country from customers)
+UNION 
+(select city,country from suppliers);
+
+(select city,country from customers)
+INTERSECT
+(select city,country from suppliers);
+
+(SELECT city, country FROM customers WHERE country='USA' OR country='Brazil')
+UNION
+(SELECT city, country FROM suppliers WHERE country='USA' OR country='Brazil');
+
+
+(SELECT customer_id, total_amount FROM company_orders)
+UNION
+(SELECT id, 0 FROM customers);
+
